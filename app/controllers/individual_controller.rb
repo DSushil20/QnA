@@ -1,2 +1,0 @@
-class IndividualController < ApplicationController
-end
