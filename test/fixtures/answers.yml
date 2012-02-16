@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  answer: MyString
+  rating: 1.5
+  t_stamp: 2012-02-15 19:14:55
+
+two:
+  answer: MyString
+  rating: 1.5
+  t_stamp: 2012-02-15 19:14:55

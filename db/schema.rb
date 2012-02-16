@@ -10,7 +10,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120215094830) do
+ActiveRecord::Schema.define(:version => 20120216050640) do
+
+  create_table "answers", :force => true do |t|
+    t.string   "answer"
+    t.float    "rating"
+    t.time     "t_stamp"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "highscores", :force => true do |t|
+    t.string   "game"
+    t.integer  "score"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "questions", :force => true do |t|
+    t.string   "q_str"
+    t.time     "t_stamp"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "recents", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "Name"

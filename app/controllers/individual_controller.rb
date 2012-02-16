@@ -1,0 +1,2 @@
+class IndividualController < ApplicationController
+end
