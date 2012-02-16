@@ -10,12 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120216050640) do
+ActiveRecord::Schema.define(:version => 20120216125406) do
 
   create_table "answers", :force => true do |t|
-    t.string   "answer"
+    t.string   "description"
     t.float    "rating"
-    t.time     "t_stamp"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
