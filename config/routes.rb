@@ -1,5 +1,5 @@
 QnA::Application.routes.draw do
-  resources :highscores
+ 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -59,7 +59,12 @@ QnA::Application.routes.draw do
   # match ':controller(/:action(/:id(.:format)))'
 
 ActionController::Routing::Routes.draw do |map|
-map.connect '/landing/', :controller=>'landing', :action=>'start'
+ map.connect '/landing/', :controller=>'landing', :action=>'start'
+
+ resources :users, :only => [:create]
+ resources :questions, :only => [:create]
+ match 'landing' => 'landing#start', :as => :landing 
+ #match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
 end
 
 end

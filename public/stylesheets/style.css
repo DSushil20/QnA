@@ -1,4 +1,9 @@
 
+
+#user_email, #user_password{
+width:195px;
+}
+
 #outer-container{
 
 width:100%;
@@ -44,7 +49,8 @@ customForm input{
 	font-size: 11px;
 	border: 1px solid #CCCCCC;
 	}
-	input#button{
+
+	input#button, #user_submit{
 	width: 214px;
 	 float:left;
 	padding: 4px;
@@ -52,11 +58,14 @@ customForm input{
 	border-bottom: 1px solid rgba(0,0,0,0.25);
 	font-size: 11px;
 	border: 1px solid #CCCCCC;
+	border-radius: 5px 5px 5px 5px;
+    box-shadow: 1px 3px 4px 1px #888888;
+
 }
 
 .submit {
 
-   border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
     box-shadow: 1px 3px 4px 1px #888888;
 
 
