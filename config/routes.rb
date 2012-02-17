@@ -61,6 +61,8 @@ QnA::Application.routes.draw do
 ActionController::Routing::Routes.draw do |map|
  map.connect '/landing/', :controller=>'landing', :action=>'start'
 
+ map.connect '/question/:id', :controller=>'questions', :action=>'question'
+
  resources :users, :only => [:create]
  resources :questions, :only => [:create]
  match 'landing' => 'landing#start', :as => :landing 

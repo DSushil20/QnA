@@ -15,4 +15,11 @@ class QuestionsController < ApplicationController
   	end
 
 
+
+   def question
+   	
+   end
+
+
+
 end

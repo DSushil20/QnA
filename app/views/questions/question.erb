@@ -1,0 +1,88 @@
+
+<html>
+
+<head>
+<!--link rel="styleSheet" href="style.css" type="text/css" media="screen" /-->
+<%= stylesheet_link_tag "style" %>
+
+<title>BLOGGER BOARD </title>
+
+<script type="text/javascript">
+
+</script>
+
+</head>
+
+
+
+<body>
+
+<div id="outer-container">
+ 
+ <div id="container">
+		
+		<br clear="all" />
+		<br clear="all" />
+		<br clear="all" />
+		<br clear="all" />
+
+
+
+	<ul>
+ 		<li>
+				<textarea cols=70 rows=5>
+				
+						 Question ??
+		
+				</textarea>
+	        </li>
+		<li>
+				<textarea cols=70 rows=5>
+				
+						 Answer1 
+		
+				</textarea>
+	        </li>
+		 <li>
+				<textarea cols=70 rows=5>
+				
+						 Answer2
+		
+				</textarea>
+	        </li>
+	</ul>
+
+
+
+  <div id="ask-answer">
+      <%= form_for(@answer) do |f| %>
+        <% if @answer.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@answer.errors.count, "error") %> prohibited this man from being saved:</h2>
+
+            <ul>
+            <% @answer.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div><!--error_explanation ends-->
+      <% end %>
+
+      <div class="field">
+        <%= f.text_area :description , :value=> 'Post your Answer'%>
+        <%= f.submit :value => 'Post Answer' %>
+      </div><!-- fields ends-->
+  
+    
+  <% end %>
+  </div><!--ask-answer ends-->
+
+
+  
+</div> <!--container ends-->
+
+
+</div> <!-- outer-container ends-->
+</body>
+
+</html>
