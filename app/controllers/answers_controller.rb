@@ -16,4 +16,9 @@ class AnswersController < ApplicationController
   	end
 
 
+    def show
+      puts 'Hey, want to see answer !!'
+      
+    end
+
 end
