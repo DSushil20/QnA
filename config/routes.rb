@@ -58,15 +58,27 @@ QnA::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
 
-ActionController::Routing::Routes.draw do |map|
- map.connect '/landing/', :controller=>'landing', :action=>'start'
 
- map.connect '/question/:id', :controller=>'questions', :action=>'question'
+match "/questions/:id/answers/:id" => "questions#question"
+
+
+resources :users do
+  #resources :magazines do
+    resources :answers
+  #end
+end
+
+
+ActionController::Routing::Routes.draw do |map|
+ map.connect '/landing/(:id)', :controller=>'landing', :action=>'start'
+
+ map.connect '/questions/:id', :controller=>'questions', :action=>'question'
+
+ #match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
+end
+
 
  resources :users, :only => [:create]
  resources :questions, :only => [:create]
  match 'landing' => 'landing#start', :as => :landing 
- #match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
-end
-
 end
