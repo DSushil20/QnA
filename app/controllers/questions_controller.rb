@@ -18,6 +18,14 @@ class QuestionsController < ApplicationController
 
    def question
    	
+    @question=Question.find(params[:id])
+
+    #@answer=Answer   
+
+     
+   end
+
+   def show
    end
 
 
