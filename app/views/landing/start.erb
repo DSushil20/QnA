@@ -22,7 +22,8 @@
  <div id="container">
 		
      <div id="login-form">	
-
+<%  puts 'Hello' 
+    puts @user[:id] %>
 
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
