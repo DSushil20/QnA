@@ -2,6 +2,9 @@ class QuestionsController < ApplicationController
 	
 	def create  	
   	   @question = Question.new(params[:question])
+       @question.user_id=24
+       
+        puts 'in question controller'
 
     	respond_to do |format|
      	 	if @question.save
@@ -12,20 +15,18 @@ class QuestionsController < ApplicationController
         		format.xml  { render :xml => @question.errors, :status => :unprocessable_entity }
       		end
     	end
-  	end
+  end
 
 
 
    def question
-   	
-    @question=Question.find(params[:id])
-
-    #@answer=Answer   
-
-     
+      @answer=Answer.new
+      @question=Question.find(params[:id])
+      @answers=Answer.where(params[:id])   
    end
 
    def show
+
    end
 
 

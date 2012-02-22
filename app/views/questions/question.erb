@@ -31,27 +31,51 @@
 	<ul>
  		<li>
 				<textarea cols=70 rows=5>
-				
-						 
 
-						 <%= @question.description  %>
+						 <%= @question.description 
+						  %>
 		
 				</textarea>
 	        </li>
-		<li>
-				<textarea cols=70 rows=5>
-				
-						 Answer1 
-		
-				</textarea>
-	        </li>
-		 <li>
-				<textarea cols=70 rows=5>
-				
-						 Answer2
-		
-				</textarea>
-	        </li>
+
+	 </ul>
+
+
+
+	 <div id="question-container">
+
+	<%= form_for(@answer) do |f| %>
+  		<% if @answer.errors.any? %>
+    		<div id="error_explanation">
+      			<h2><%= pluralize(@answer.errors.count, "error") %> prohibited this man from being saved:</h2>
+
+    		  	<ul>
+    			  <% @answer.errors.full_messages.each do |msg| %>
+        			<li><%= msg %></li>
+      			  <% end %>
+      		 	</ul>
+        	</div>
+   		<% end %>
+
+  	<div class="field">
+      	<%= f.text_area :description , :value=> 'Post your Answer !!' , :cols=>"90" , :rows=>"10" %>
+ 		<%= f.submit :value => 'Post' %>
+  	</div>
+  
+ 	<% end %>  
+	</div>
+
+
+
+	 <ul>
+
+	        <% @answers.each do |answer|%>
+				<li>
+					<textarea cols=70 rows=5>
+					<%= answer.description%>
+		    	   < textarea>
+	            </li>
+	        <%end%>
 	</ul>
 
 

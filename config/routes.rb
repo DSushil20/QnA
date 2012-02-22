@@ -70,14 +70,16 @@ end
 
 
 ActionController::Routing::Routes.draw do |map|
- map.connect '/landing/(:id)', :controller=>'landing', :action=>'start'
 
- map.connect '/questions/:id', :controller=>'questions', :action=>'question'
+  map.connect '/questions/', :controller=>'questions', :action=>'create'
+  map.connect '/landing/(:id)', :controller=>'landing', :action=>'start'
+  map.connect '/questions/:id', :controller=>'questions', :action=>'question'
+
 
  #match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
 end
 
-
+ resources :answers
  resources :users, :only => [:create]
  resources :questions, :only => [:create]
  match 'landing' => 'landing#start', :as => :landing 

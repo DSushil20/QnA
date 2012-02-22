@@ -16,8 +16,15 @@ class AnswersController < ApplicationController
   	end
 
 
-    def show
+    def new
+      @answer = Answer.new
       puts 'Hey, want to see answer !!'
+      
+    end
+    def edit
+      
+    end
+    def show
       
     end
 

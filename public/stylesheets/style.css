@@ -52,14 +52,14 @@ customForm input{
 
 	input#button, #user_submit{
 	width: 214px;
-	 float:left;
+	float:left;
 	padding: 4px;
 	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
 	border-bottom: 1px solid rgba(0,0,0,0.25);
 	font-size: 11px;
 	border: 1px solid #CCCCCC;
 	border-radius: 5px 5px 5px 5px;
-    box-shadow: 1px 3px 4px 1px #888888;
+        box-shadow: 1px 3px 4px 1px #888888;
 
 }
 
@@ -94,14 +94,32 @@ customForm input{
 
 
 #question-container{
-margin-left:40px;
+    margin:auto;
+    padding:30px;
+    padding-left:110px;
+    border:1px solid #000;
 }
 
 #Ask{
-position:relative;
-top:-37px;
-right:-30px;
+    position:relative;
+    top:-37px;
+    right:-30px;
 }
 
+#question_submit{
+         position:relative;
+        top:-17px;
+        padding: 5px;
+        font-size:18px;
+        font-weight:bold
+		text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+		border-bottom: 1px solid rgba(0,0,0,0.25);
+		border: 1px solid #CCCCCC;
+		border-radius: 5px 5px 5px 5px;
+        box-shadow: 1px 3px 4px 1px #888888;
 
+}
 
+ul{
+   list-style-type:none;
+}

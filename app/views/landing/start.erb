@@ -3,7 +3,6 @@
 
 <head>
 <!--link rel="styleSheet" href="style.css" type="text/css" media="screen" /-->
-<%= stylesheet_link_tag "style" %>
 
 <title>BLOGGER BOARD </title>
 
@@ -45,7 +44,7 @@
   </div><br clear="all" />
   <div class="field outer">
     <%= f.label :Password %><br />
-    <%= f.text_field :password %>
+    <%= f.password_field :password %>
   </div>
  <br clear="all" /><br clear="all" />
   <div class="actions">
@@ -80,7 +79,7 @@
    		<% end %>
 
   	<div class="field">
-      	<%= f.text_area :description , :value=> 'Ask your Question'%>
+      	<%= f.text_area :description , :value=> 'Ask your Question !!' , :cols=>"90" , :rows=>"10" %>
  		<%= f.submit :value => 'Ask' %>
   	</div>
   
@@ -94,27 +93,17 @@
 
 <div id="recent-questions">
 	<ul>
- 		<li>
+   
+    <% @recent_questions_array.each do |question| %>
+ 		  <li>
 				<textarea cols=70 rows=5>
 				
-						 Question ??
+						 <%= question.description %>
 		
 				</textarea>
-	        </li>
-		<li>
-				<textarea cols=70 rows=5>
-				
-						 Answer1 
-		
-				</textarea>
-	        </li>
-		 <li>
-				<textarea cols=70 rows=5>
-				
-						 Answer2
-		
-				</textarea>
-	        </li>
+	    </li>
+    <%end%>   
+	
 	</ul>
 </div>
 
