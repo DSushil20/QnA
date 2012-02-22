@@ -1,0 +1,15 @@
+class AddQuestionIdToAnswer < ActiveRecord::Migration
+  def self.up
+<<<<<<< HEAD
+  	add_column :answers, :question_id, :integer
+=======
+  	add_column :answers, :question_id
+>>>>>>> 54e2d2c9a33421ec0bc09fd6e3a73c9eab85badd
+  end
+
+
+  def self.down
+  	remove_column :answers, :question_id
+
+  end
+end

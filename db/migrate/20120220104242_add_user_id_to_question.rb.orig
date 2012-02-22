@@ -1,0 +1,13 @@
+class AddUserIdToQuestion < ActiveRecord::Migration
+  def self.up
+<<<<<<< HEAD
+  	add_column :questions, :user_id,:integer
+=======
+  	add_column :questions, :user_id
+>>>>>>> 54e2d2c9a33421ec0bc09fd6e3a73c9eab85badd
+  end
+
+  def self.down
+  	remove_column :questions, :user_id
+  end
+end
