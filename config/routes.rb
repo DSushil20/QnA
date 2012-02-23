@@ -68,6 +68,7 @@ resources :users do
   #end
 end
 
+resources :user_activities
 
 ActionController::Routing::Routes.draw do |map|
 

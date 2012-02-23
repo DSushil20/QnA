@@ -5,7 +5,7 @@ class AnswersController < ApplicationController
 
     	respond_to do |format|
      	 	if @answer.save
-        		format.html { #redirect_to landing_path 
+        		format.html { redirect_to landing_path 
         		 }
         		format.xml  { render :xml => @answer, :status => :created, :location => @answer }
       		else

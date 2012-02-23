@@ -1,29 +1,12 @@
 
-<html>
-
-<head>
-<!--link rel="styleSheet" href="style.css" type="text/css" media="screen" /-->
-<%= stylesheet_link_tag "style" %>
-
-<title>BLOGGER BOARD </title>
-
-<script type="text/javascript">
-
-</script>
-
-</head>
-
-
-
-<body>
-
 <div id="outer-container">
  
  <div id="container">
-		
+
+      	      	
 		<br clear="all" />
-		<br clear="all" />
-		<br clear="all" />
+		<br clear="all<% %>" />
+		<% %><br clear="all" />
 		<br clear="all" />
 
 
@@ -41,30 +24,8 @@
 	 </ul>
 
 
-
-	 <div id="question-container">
-
-	<%= form_for(@answer) do |f| %>
-  		<% if @answer.errors.any? %>
-    		<div id="error_explanation">
-      			<h2><%= pluralize(@answer.errors.count, "error") %> prohibited this man from being saved:</h2>
-
-    		  	<ul>
-    			  <% @answer.errors.full_messages.each do |msg| %>
-        			<li><%= msg %></li>
-      			  <% end %>
-      		 	</ul>
-        	</div>
-   		<% end %>
-
-  	<div class="field">
-      	<%= f.text_area :description , :value=> 'Post your Answer !!' , :cols=>"90" , :rows=>"10" %>
- 		<%= f.submit :value => 'Post' %>
-  	</div>
-  
- 	<% end %>  
-	</div>
-
+      
+	<%= render :partial=>"answers/new_answer" , :locals=>{:answer=>Answer.new(:question_id=>@question.id)} %>		
 
 
 	 <ul>
@@ -72,21 +33,30 @@
 	        <% @answers.each do |answer|%>
 				<li>
 					<textarea cols=70 rows=5>
-					<%= answer.description%>
-		    	   < textarea>
+						<%= answer.description %>
+						<%= answer.id %>	
+							
+							
+		    	    </textarea>
+		    	    
+		    	    <%=form_for(@user_activity[answer]) do |f| %>
+								<div class="field">
+								  <%= f.hidden_field :user_id  %>
+								  <%= f.hidden_field :answer_id , :value=> answer.id %>
+								  <%#= f.hidden_field :id  %>
+
+								  <%= f.submit :value => 'UP', :disabled=> (@user_activity[answer] and (@user_activity[answer].vote == 1 )? 'true' : nil )%>
+
+								  <%= f.submit :value => 'DOWN'  , :disabled=> (@user_activity[answer] and (@user_activity[answer].vote == 2 )? 'true' : nil )%>
+								
+
+								</div> 
+					<%end%>
+
 	            </li>
 	        <%end%>
 	</ul>
 
 
-
-
-
-  
-</div> <!--container ends-->
-
-
-</div> <!-- outer-container ends-->
-</body>
-
-</html>
+</div>
+</div>

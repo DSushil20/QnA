@@ -1,8 +1,7 @@
 class UserActivity < ActiveRecord::Base
-	
+<<<<<<< HEAD
+=======
 	belongs_to :user
 	belongs_to :answer
-	
-	attr_accessible :all
-	
+>>>>>>> 29f506eab74dd8b81eace986238e6f15c7f86bb0
 end

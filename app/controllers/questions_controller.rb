@@ -20,15 +20,20 @@ class QuestionsController < ApplicationController
 
 
    def question
+
+      @user_activity= {}
       @answer=Answer.new
-      @question=Question.find(params[:id])
-      @answers=Answer.where(params[:id])   
+      @question=Question.find(params[:id] )
+      @answers=@question.answers.order( 'updated_at desc').limit(3).includes(:user_activities)   
+
+       @answers.each do |a|
+           @user_activity[a]= UserActivity.find_or_initialize_by_user_id_and_answer_id(24,a.id)
+       end
+      
    end
 
    def show
 
    end
-
-
 
 end

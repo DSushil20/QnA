@@ -1,4 +1,5 @@
 class Answer < ActiveRecord::Base
-belongs_to:users
-belongs_to:questions
+	belongs_to :user
+	belongs_to :question
+	has_many :user_activities
 end
