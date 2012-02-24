@@ -1,20 +1,6 @@
 
-<html>
-
-<head>
-<!--link rel="styleSheet" href="style.css" type="text/css" media="screen" /-->
-
-<title>BLOGGER BOARD </title>
-
-<script type="text/javascript">
-
-</script>
-
-</head>
 
 
-
-<body>
 
 <div id="outer-container">
  
@@ -42,11 +28,14 @@
     	<br clear="all" />
     <%= f.text_field :email %>
   </div><br clear="all" />
+  
   <div class="field outer">
     <%= f.label :Password %><br />
     <%= f.password_field :password %>
   </div>
+ 
  <br clear="all" /><br clear="all" />
+ 
   <div class="actions">
     <%= f.submit :value => 'Log/Register'%>
   </div>
@@ -91,30 +80,25 @@
 
 
 
-<div id="recent-questions">
-	<ul>
+  <div id="recent-questions">
+	   <ul>
    
-    <% @recent_questions_array.each do |question| %>
- 		  <li>
-				<textarea cols=70 rows=5>
-				
-						 <%= question.description %>
-		
-				</textarea>
-	    </li>
-    <%end%>   
+           <% @recent_questions_array.each do |question| %>
+ 		         
+            <% link_to "/questions/#{question.id}" do %>
+             <li>
+                  <p class="question-desc">
+                    <%= question.description%>
+                    
+				          </p>  
+	          </li>
+             <%end%>
+          <%end%>   
 	
 	</ul>
 </div>
 
   
-</div> <!--container ends-->
-
-
-
-
+  </div> <!--container ends-->
 
 </div> <!-- outer-container ends-->
-</body>
-
-</html>

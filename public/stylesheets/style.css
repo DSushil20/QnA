@@ -123,3 +123,21 @@ customForm input{
 ul{
    list-style-type:none;
 }
+
+.question-desc {
+width:90%;
+height:50px;
+background:#fff;
+padding:10px
+
+	        border-bottom: 1px solid rgba(0,0,0,0.25);
+		border: 1px solid #CCCCCC;
+		border-radius: 5px 5px 5px 5px;
+                box-shadow: 1px 3px 4px 1px #888888;
+
+}
+
+
+.question-desc p a:hover {
+color:#000;
+}

@@ -12,13 +12,13 @@ class UserActivitiesController < ApplicationController
        		end
         
             respond_to do |format|
-       			if @user_activity.save 
- 					format.html {redirect_to "/questions/#{Answer.find(params[:user_activity][:answer_id]).question_id}"}
- 					format.xml {render :xml => @user_activity, :status => :created, :location => @user_activity}
-   				else
-   					format.html { render :action => "new" }
-        			format.xml  { render :xml => @user_activity.errors, :status => :unprocessable_entity }
-       			end	
+       			  if @user_activity.save 
+ 			    		  format.html {redirect_to @user_activity.answer.question}
+ 					      format.xml {render :xml => @user_activity, :status => :created, :location => @user_activity}
+   				    else
+   					    format.html { render :action => "new" }
+        			 format.xml  { render :xml => @user_activity.errors, :status => :unprocessable_entity }
+       			  end	
        	    end
 	end	
 
@@ -30,9 +30,7 @@ class UserActivitiesController < ApplicationController
 	def update
 
 		@user_activity=UserActivity.find(params[:id])
-        	
-			puts @user_activity
-
+      
         	if params[:commit] == 'UP'
         		@user_activity.vote = 1        	
        		else
@@ -40,14 +38,13 @@ class UserActivitiesController < ApplicationController
        		end
         
             respond_to do |format|
-       			if @user_activity.save 
- 					format.html {redirect_to "/questions/#{Answer.find(params[:user_activity][:answer_id]).question_id}"}
- 					format.xml {render :xml => @user_activity, :status => :created, :location => @user_activity}
-   				else
-   					format.html { render :action => "new" }
-        			format.xml  { render :xml => @user_activity.errors, :status => :unprocessable_entity }
-       			end	
+       			  if @user_activity.save 
+ 					      format.html {redirect_to "/questions/#{Answer.find(params[:user_activity][:answer_id]).question_id}"}
+ 					      format.xml {render :xml => @user_activity, :status => :created, :location => @user_activity}
+   				    else
+   					    format.html { render :action => "new" }
+        			  format.xml  { render :xml => @user_activity.errors, :status => :unprocessable_entity }
+       			  end	
        	    end	
-
 	end
 end

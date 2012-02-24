@@ -39,7 +39,7 @@
 							
 		    	    </textarea>
 		    	    
-		    	    <%=form_for(@user_activity[answer]) do |f| %>
+		    	    <%=form_for (@user_activity[answer] ) do |f| %>
 								<div class="field">
 								  <%= f.hidden_field :user_id  %>
 								  <%= f.hidden_field :answer_id , :value=> answer.id %>

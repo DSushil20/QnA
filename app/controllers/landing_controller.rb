@@ -19,7 +19,7 @@ class LandingController < ApplicationController
 	def recent_questions #methos to find recent question 
 		@user_id=24
 
-        array=Question.limit('10').order('updated_at desc')
+        array=Question.limit('4').order('updated_at desc')
         
 	end
 

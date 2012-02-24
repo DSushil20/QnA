@@ -7,9 +7,6 @@ class UserActivity < ActiveRecord::Base
 
 	after_save :update_karma 
 	
-
-
-
 	private 
 	def update_karma 
 
