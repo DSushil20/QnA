@@ -45,9 +45,9 @@
 								  <%= f.hidden_field :answer_id , :value=> answer.id %>
 								  <%#= f.hidden_field :id  %>
 
-								  <%= f.submit :value => 'UP', :disabled=> (@user_activity[answer] and (@user_activity[answer].vote == 1 )? 'true' : nil )%>
+								  <%= f.submit :value => 'UP', :disabled=> ( user_signed_in? and @user_activity[answer] and (@user_activity[answer].vote == 1 )? 'true' : nil )%>
 
-								  <%= f.submit :value => 'DOWN'  , :disabled=> (@user_activity[answer] and (@user_activity[answer].vote == 2 )? 'true' : nil )%>
+								  <%= f.submit :value => 'DOWN', :disabled=> (user_signed_in? and @user_activity[answer] and (@user_activity[answer].vote == 2 )? 'true' : nil ) %>
 								
 
 								</div> 

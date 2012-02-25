@@ -7,6 +7,11 @@ gem 'rails', '3.0.9'
 
 gem 'sqlite3'
 
+
+# Gem device to add authentication
+gem 'devise', '1.1.rc0'
+
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

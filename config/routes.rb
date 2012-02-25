@@ -1,6 +1,8 @@
 QnA::Application.routes.draw do
  
 
+  devise_for :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -61,6 +63,9 @@ QnA::Application.routes.draw do
 
 match "/questions/:id/answers/:id" => "questions#question"
 
+#set root of application to landing page with start action
+
+root :to => "landing#start"
 
 resources :users do
   #resources :magazines do
