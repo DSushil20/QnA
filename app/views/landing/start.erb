@@ -10,19 +10,8 @@
 <%  puts 'Hello' 
     puts @user[:id] %>
 
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this man from being saved:</h2>
-
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<%= form_for(resource_name, resource, :url => session_path(resource_name)) do |f| %>
+  
   <div class="field outer">
     <%= f.label :Email %>
     	<br clear="all" />
@@ -69,7 +58,7 @@
 
   	<div class="field">
       	<%= f.text_area :description , :value=> 'Ask your Question !!' , :cols=>"90" , :rows=>"10" %>
- 		<%= f.submit :value => 'Ask' %>
+ 		<%= f.submit :value => 'Ask' , :disabled=> ( ! user_signed_in?  ? 'true' : nil ) %>
   	</div>
   
   	<div class="actions">

@@ -13,7 +13,7 @@ class UserActivitiesController < ApplicationController
         
             respond_to do |format|
        			  if @user_activity.save 
- 			    		  format.html {redirect_to @user_activity.answer.question}
+ 			    		  format.html {redirect_to "/questions/#{Answer.find(params[:user_activity][:answer_id]).question_id}"}
  					      format.xml {render :xml => @user_activity, :status => :created, :location => @user_activity}
    				    else
    					    format.html { render :action => "new" }

@@ -27,7 +27,7 @@ class QuestionsController < ApplicationController
       @answers=@question.answers.order( 'updated_at desc').limit(3).includes(:user_activities)   
 
        @answers.each do |a|
-           @user_activity[a]= UserActivity.find_or_initialize_by_user_id_and_answer_id(24,a.id)
+           @user_activity[a]= UserActivity.find_or_initialize_by_user_id_and_answer_id( current_user.id , a.id )
        end
       
    end

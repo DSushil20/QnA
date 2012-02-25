@@ -16,7 +16,7 @@
       	<%= f.text_area :description , :value=> 'Post your Answer !!' , :cols=>"90" , :rows=>"10" %>
  		 <%= f.hidden_field :question_id  %>
 
-    <%= f.submit :value => 'Post' %>
+    <%= f.submit :value => 'Post' , :disabled=> ( ! user_signed_in?   ? 'true' : nil ) %>
   	</div>
   
  	<% end %>  
